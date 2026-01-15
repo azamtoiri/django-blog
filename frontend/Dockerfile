@@ -10,7 +10,7 @@ COPY . .
 RUN yarn run build
 
 # 2. Статичный сервер (nginx или caddy)
-FROM caddy:latest
+FROM caddy:2.11-alpine
 
 # Копируем сборку Vite в Caddy
 COPY --from=builder /app/dist /srv
