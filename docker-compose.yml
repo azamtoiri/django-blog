@@ -11,6 +11,7 @@ services:
       - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://frontend, http://localhost:8080}
     volumes:
       - static:/app/staticfiles
+      - backend_db:/app/db.sqlite3
     restart: unless-stopped
 
     networks:
@@ -32,7 +33,7 @@ services:
 
 volumes:
   static:
-  caddy_config:
+  backend_db:
 
 networks:
   caddy_network:
