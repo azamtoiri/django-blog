@@ -28,26 +28,8 @@ services:
     networks:
       - caddy_network
 
-  caddy:
-    image: caddy:latest
-    container_name: dev-caddy
-    ports:
-      - "8080:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-      - static:/static
-
-    restart: unless-stopped
-    networks:
-      - caddy_network
-
-
 volumes:
   static:
-  caddy_data:
   caddy_config:
 
 networks:
