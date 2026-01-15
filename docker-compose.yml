@@ -11,7 +11,7 @@ services:
       - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://frontend, http://localhost:8080}
     volumes:
       - static:/app/staticfiles
-      - backend_db:/app/db.sqlite3
+      - backend_db:/app/db
     restart: unless-stopped
 
     networks:
