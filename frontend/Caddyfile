@@ -1,5 +1,22 @@
 :80 {
+
+  # Django backend
+  handle /api/* {
+    reverse_proxy backend:8000
+  }
+
+  handle /admin/* {
+    reverse_proxy backend:8000
+  }
+
+  handle_path /static/* {
+    root * /static/
+    file_server
+  }
+
+  handle {
     root * /srv
     file_server
     try_files {path} /index.html
+  }
 }
